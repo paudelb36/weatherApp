@@ -1,9 +1,14 @@
+require('dotenv').config();
+
 const cityInput = document.querySelector(".city-input");
 const searchButton = document.querySelector(".search-btn");
 const locationButton = document.querySelector(".location-btn");
 const currentWeatherDiv = document.querySelector(".current-weather");
 const weatherCardsDiv = document.querySelector(".weather-cards");
-const API_KEY = "eb23e5bf940f827fbc7cd5f786214163"; // API key for OpenWeatherMap API
+
+const API_KEY = "process.env.API_KEY"; // API key for OpenWeatherMap API
+
+
 const createWeatherCard = (cityName, weatherItem, index) => {
     if(index === 0) { // HTML for the main weather card
         return `<div class="details">
